@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>HD Medeiros - Dashboard Executivo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul: #1f3c88;
+      --azul-escuro: #162b63;
+      --vermelho: #e30613;
+      --fundo: #f4f6fb;
+      --card: #ffffff;
+      --texto: #2c2c2c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
+      color: var(--texto);
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header h1 {
+      color: white;
+      font-weight: 400;
+      font-size: 22px;
+    }
+
+    /* CONTAINER */
+    .container {
+      padding: 40px;
+    }
+
+    .title {
+      color: white;
+      font-size: 28px;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--card);
+      border-radius: 15px;
+      padding: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--vermelho);
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--azul);
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* BOTÃO */
+    .btn {
+      margin-top: 15px;
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: var(--azul);
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--vermelho);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      color: white;
+      margin-top: 40px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="HD Medeiros">
+  <h1>Dashboard Executivo</h1>
+</header>
+
+<div class="container">
+  <div class="title">Relatórios Estratégicos</div>
+
+  <div class="grid">
+
+    <div class="card" onclick="openLink('https://script.google.com/macros/s/AKfycbwz296ZApQKj0GpZBgR58PgI62AF07lSS40tq9dFkCnlWSSok2BzMR9ZRoau2SfR3k/exec')">
+      <h2>Fornos Acabados</h2>
+      <p>Visualização geral dos fornos finalizados</p>
+      <span class="btn">Acessar</span>
+    </div>
+
+    <div class="card" onclick="openLink('https://script.google.com/macros/s/AKfycbwBf1zeYo97xe0FpY2sw_o5QAqWuwHo0TKdhQAWU3uAvha4JfNjr-tY9f9GN8AhHLU/exec')">
+      <h2>Por Operação</h2>
+      <p>Análise detalhada por etapa produtiva</p>
+      <span class="btn">Acessar</span>
+    </div>
+
+    <div class="card" onclick="openLink('https://script.google.com/macros/s/AKfycbxqMJPEgeklwG5ynYCba9xYdq11fHPY9EGqfBHfS0FtBPeqa0Plz5LSoSmDOhjKix0/exec')">
+      <h2>Apontamentos Diários</h2>
+      <p>Controle diário da produção</p>
+      <span class="btn">Acessar</span>
+    </div>
+
+    <div class="card" onclick="openLink('https://script.google.com/macros/s/AKfycby9Tymf4I8ibZMq9udkhvbSknFTHY3wz4_asrQWQon_2a9d1Dxax_TCZo5Zvn8B14c/exec')">
+      <h2>Histórico por Série</h2>
+      <p>Rastreamento completo por número de série</p>
+      <span class="btn">Acessar</span>
+    </div>
+
+    <div class="card" onclick="openLink('https://script.google.com/macros/s/AKfycbxSfwG41lyURsxrZVeS0PcwyMyC9UMXEmNpGz_6IdCzeT9Qi3x0SOzbSyENtUJVoEY/exec?page=media')">
+      <h2>Tempo Médio</h2>
+      <p>Indicadores de performance por operação</p>
+      <span class="btn">Acessar</span>
+    </div>
+
+    <div class="card" onclick="openLink('https://script.google.com/macros/s/AKfycbxITTlor20nYC3SAqzwcEnP6BcwWGBSvG5AqGZRmP_JSmUdnoIDzesZqJKgheMu23E/exec')">
+      <h2>Produção Diária</h2>
+      <p>Visão consolidada da produção do dia</p>
+      <span class="btn">Acessar</span>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 HD Medeiros — Inteligência em Produção
+  </footer>
+
+</div>
+
+<script>
+  function openLink(url) {
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
